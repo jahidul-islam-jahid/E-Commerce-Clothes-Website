@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Clothes",
+    "items": 154,
+    "discount": 0,
+    "image": "https://maraviyainfotech.com/projects/grabit-tailwind/grabit-tailwind/assets/img/category/c-1.png",
+    "bgColor": "bg-red-50"
+  },
+  {
+    "id": 2,
+    "name": "Glasses",
+    "items": 320,
+    "discount": 30,
+    "image": "https://maraviyainfotech.com/projects/grabit-tailwind/grabit-tailwind/assets/img/category/c-4.png",
+    "bgColor": "bg-green-50"
+  },
+  {
+    "id": 3,
+    "name": "Watches",
+    "items": 65,
+    "discount": 0,
+    "image": "https://maraviyainfotech.com/projects/grabit-tailwind/grabit-tailwind/assets/img/category/c-2.png",
+    "bgColor": "bg-blue-50"
+  },
+  {
+    "id": 4,
+    "name": "Dresses",
+    "items": 548,
+    "discount": 15,
+    "image": "https://maraviyainfotech.com/projects/grabit-tailwind/grabit-tailwind/assets/img/category/c-3.png",
+    "bgColor": "bg-yellow-50"
+  },
+  {
+    "id": 5,
+    "name": "Jacket's",
+    "items": 48,
+    "discount": 10,
+    "image": "https://maraviyainfotech.com/projects/grabit-tailwind/grabit-tailwind/assets/img/category/c-7.png",
+    "bgColor": "bg-purple-50"
+  },
+  {
+    "id": 6,
+    "name": "Lipistrik",
+    "items": 59,
+    "discount": 0,
+    "image": "https://maraviyainfotech.com/projects/grabit-tailwind/grabit-tailwind/assets/img/product-images/54_1.jpg",
+    "bgColor": "bg-pink-50"
+  }
+]

@@ -125,7 +125,17 @@ function Footer() {
       </div>
       <div className="bg-[#4B5966] py-3">
         <div className="container mx-auto justify-center flex">
-          <p className="text-white">Copyright © Grabit all rights reserved. Powered by <a href="https://www.facebook.com/j.i.jahid900" className="font-bold" target="blank">J.I.Jahid</a>.</p>
+          <p className="text-white">
+            Copyright © Grabit all rights reserved. Powered by{" "}
+            <a
+              href="https://www.facebook.com/j.i.jahid900"
+              className="font-bold"
+              target="blank"
+            >
+              J.I.Jahid
+            </a>
+            .
+          </p>
         </div>
       </div>
     </div>

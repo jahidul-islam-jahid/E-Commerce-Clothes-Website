@@ -33,7 +33,15 @@
   background-image: url(/public/image/hero2.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover ;
+  background-size: cover;
+}
+
+.banner {
+  background-image: url(/public/image/banner.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed
 }
 
 .swiper-pagination-bullet {
