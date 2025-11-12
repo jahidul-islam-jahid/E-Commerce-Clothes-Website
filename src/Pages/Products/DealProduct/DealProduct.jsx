@@ -13,18 +13,17 @@ function DealProduct() {
   // Show only first 4 products
   const displayProducts = dealProducts.slice(0, 4);
   
-  
   return (
-    <div>
-      <div className="container mx-auto flex items-center justify-between">
+    <div className="py-8 md:py-12">
+      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
         <Title
           title="Day of"
           secondTitle="The deal"
           description="Don't wait. The time will never be just right."
         ></Title>
       </div>
-      <div className="container mx-auto flex items-center justify-between pb-10">
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="container mx-auto px-4 pb-8 md:pb-10">
+         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {displayProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

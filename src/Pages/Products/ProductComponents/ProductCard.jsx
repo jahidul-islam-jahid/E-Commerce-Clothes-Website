@@ -11,10 +11,10 @@ function ProductCard({ product }) {
   };
 
   return (
-    <div className="max-w-sm bg-white rounded-2xl h-auto shadow-lg p-6 hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-100 flex flex-col">
+    <div className="max-w-sm bg-white rounded-2xl h-auto shadow-lg p-4 md:p-6 hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-100 flex flex-col">
       {/* Product Image Container - Fixed height with proper fitting */}
       <div className="relative mb-4 flex-shrink-0">
-        <div className="w-full h-48 bg-gray-50 rounded-xl overflow-hidden flex items-center justify-center">
+        <div className="w-full h-40 md:h-48 bg-gray-50 rounded-xl overflow-hidden flex items-center justify-center">
           <img
             className="w-full h-full object-contain p-2"
             src={product.image}
@@ -47,7 +47,7 @@ function ProductCard({ product }) {
         </div>
 
         {/* Product Name */}
-        <h2 className="font-bold text-lg text-gray-900 line-clamp-2 leading-tight">
+        <h2 className="font-bold text-base md:text-lg text-gray-900 line-clamp-2 leading-tight">
           {product.name}
         </h2>
 
@@ -57,8 +57,8 @@ function ProductCard({ product }) {
         </p>
 
         {/* Price Section */}
-        <div className="flex items-center gap-2 pt-2">
-          <span className="text-xl font-bold text-gray-900">
+        <div className="flex items-center gap-2 pt-2 flex-wrap">
+          <span className="text-lg md:text-xl font-bold text-gray-900">
             ${product.price}
           </span>
           <span className="text-sm line-through text-gray-400">
@@ -70,13 +70,13 @@ function ProductCard({ product }) {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex gap-3 pt-4">
+        <div className="flex gap-2 md:gap-3 pt-4">
           <button
             onClick={() => setCartProducts([product, ...cartProducts])}
-            className="cursor-pointer flex-1 bg-gradient-to-r from-[#516EBF] to-[#516EBF] text-white px-4 py-3 rounded-xl hover:from-[#516EBF] hover:to-[#516EBF] transition-all duration-200 font-semibold shadow-md hover:shadow-lg active:scale-95 flex items-center justify-center gap-2"
+            className="cursor-pointer flex-1 bg-gradient-to-r from-[#516EBF] to-[#516EBF] text-white px-3 md:px-4 py-2 md:py-3 rounded-xl hover:from-[#516EBF] hover:to-[#516EBF] transition-all duration-200 font-semibold shadow-md hover:shadow-lg active:scale-95 flex items-center justify-center gap-1 md:gap-2 text-sm md:text-base"
           >
             <svg
-              className="w-4 h-4"
+              className="w-3 h-3 md:w-4 md:h-4"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -93,10 +93,10 @@ function ProductCard({ product }) {
 
           <button
             onClick={handleButtonClick}
-            className="cursor-pointer px-4 py-3 border border-gray-300 text-gray-700 rounded-xl hover:border-blue-500 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 font-medium flex items-center justify-center"
+            className="cursor-pointer px-3 md:px-4 py-2 md:py-3 border border-gray-300 text-gray-700 rounded-xl hover:border-blue-500 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 font-medium flex items-center justify-center"
           >
             <svg
-              className="w-5 h-5"
+              className="w-4 h-4 md:w-5 md:h-5"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

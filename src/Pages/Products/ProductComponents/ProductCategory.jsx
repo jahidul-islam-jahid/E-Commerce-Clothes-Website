@@ -7,11 +7,14 @@ function ProductCategory() {
       .then((res) => res.json())
       .then((data) => setCategories(data));
   }, []);
+  
   return (
-    <div className="flex gap-5">
+    <div className="flex gap-3 md:gap-5 overflow-x-auto py-2 scrollbar-hide">
       {categories.map((item, i) => (
-        <div key={i}>
-          <a className="text-lg font-semibold cursor-pointer">{item.name}</a>
+        <div key={i} className="flex-shrink-0">
+          <a className="text-sm md:text-lg font-semibold cursor-pointer hover:text-[#516EBF] transition-colors duration-200 whitespace-nowrap">
+            {item.name}
+          </a>
         </div>
       ))}
     </div>

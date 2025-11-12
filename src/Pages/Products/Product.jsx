@@ -24,7 +24,7 @@ function Product() {
       <div className="container mx-auto items-center flex flex-col">
         <MiniProduct></MiniProduct>
       </div>
-      <div className="container mx-auto flex items-center justify-between">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
         <Title
           title="Popular"
           secondTitle="Product's"
@@ -32,10 +32,10 @@ function Product() {
         ></Title>
         <ProductCategory></ProductCategory>
       </div>
-      <div className="container mx-auto items-center flex flex-col">
-        <div className="grid grid-cols-4 gap-10">
+      <div className="container mx-auto items-center flex flex-col px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
           {products.map((product) => (
-            <ProductCard product={product} />
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
         <button
@@ -45,7 +45,7 @@ function Product() {
           }}
           className={`btn bg-[#516EBF] ${
             isSeeMore ? "" : "hidden"
-          } px-24 w-fit my-8 text-white`}
+          } px-8 md:px-24 w-fit my-8 text-white rounded-lg py-3 hover:bg-blue-700 transition-colors`}
         >
           View More
         </button>
