@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from "react";
+
+import UseData from "../../Hooks/UseData";
+
 
 function Category() {
-  const [categories, setCategories] = useState([]);
-  useEffect(() => {
-    fetch("category.json")
-      .then((res) => res.json())
-      .then((data) => setCategories(data));
-  }, []);
+
+ const {categories} = UseData()
 
   return (
     <div className="container mx-auto py-8 md:py-10 px-4">

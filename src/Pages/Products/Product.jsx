@@ -1,23 +1,14 @@
-import React, { useEffect, useState } from "react";
 import MiniProduct from "./ProductComponents/Category";
 import ProductCard from "./ProductComponents/ProductCard";
 import Title from "../../Components/SharedComponents/SectionTitle/Title";
-import ProductCategory from "./ProductComponents/ProductCategory";
 import DealProduct from "./DealProduct/DealProduct";
+import UseData from "../Hooks/UseData";
+import { useState } from "react";
 
 function Product() {
-  const [products, setProducts] = useState([]);
-  const [allProducts, setAllProducts] = useState([]);
-  const [isSeeMore, setIsSeeMore] = useState(true);
-
-  useEffect(() => {
-    fetch("products.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setAllProducts(data);
-        setProducts(data.slice(0, 8));
-      });
-  }, []);
+  const [category, setCategoy] = useState();
+  const { categories, products, allProducts, isSeeMore } = UseData(category);
+  console.log(allProducts);
 
   return (
     <div className="py-5">
@@ -30,15 +21,28 @@ function Product() {
           secondTitle="Product's"
           description="Shop online for new arrivals and get free shipping!"
         ></Title>
-        <ProductCategory></ProductCategory>
+        <div className="flex gap-3 md:gap-5 overflow-x-auto py-2 scrollbar-hide">
+          {categories.map((item, i) => (
+            <div key={i} className="flex-shrink-0">
+              <a
+                onClick={() => {
+                  setCategoy(item.id);
+                }}
+                className="text-sm md:text-lg font-semibold cursor-pointer hover:text-[#516EBF] transition-colors duration-200 whitespace-nowrap"
+              >
+                {item.name}
+              </a>
+            </div>
+          ))}
+        </div>
       </div>
       <div className="container mx-auto items-center flex flex-col px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
-          {products.map((product) => (
+          {allProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
-        <button
+        {/* <button
           onClick={() => {
             setProducts(allProducts);
             setIsSeeMore(false);
@@ -48,7 +52,7 @@ function Product() {
           } px-8 md:px-24 w-fit my-8 text-white rounded-lg py-3 hover:bg-blue-700 transition-colors`}
         >
           View More
-        </button>
+        </button> */}
       </div>
       <div>
         <DealProduct></DealProduct>

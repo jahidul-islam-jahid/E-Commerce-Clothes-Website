@@ -6,9 +6,6 @@ function ProductCard({ product }) {
   const { setCartProducts, cartProducts } = useCart();
   const navigate = useNavigate();
 
-  const handleButtonClick = () => {
-    navigate("/shop");
-  };
 
   return (
     <div className="max-w-sm bg-white rounded-2xl h-auto shadow-lg p-4 md:p-6 hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-100 flex flex-col">
@@ -92,7 +89,7 @@ function ProductCard({ product }) {
           </button>
 
           <button
-            onClick={handleButtonClick}
+            onClick={()=>navigate(`/shop/${product.id}`)}
             className="cursor-pointer px-3 md:px-4 py-2 md:py-3 border border-gray-300 text-gray-700 rounded-xl hover:border-blue-500 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 font-medium flex items-center justify-center"
           >
             <svg

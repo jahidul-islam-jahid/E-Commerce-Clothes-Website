@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router";
 
 function ShopCart() {
+  const { id } = useParams();
+  const [product, setProduct] = useState();
+  useEffect(() => {
+    fetch(`/products.json`)
+      .then((res) => res.json())
+      .then((data) => {
+        const found = data.find((item) => item.id == id);
+        setProduct(found);
+      });
+  }, []);
+  if (!product) return <h1>Loadding...</h1>;
   return (
     <div className="container mx-auto py-10 md:py-20 px-4">
       <div className="flex flex-col lg:flex-row gap-8 items-center">
@@ -8,61 +20,52 @@ function ShopCart() {
         <div className="w-full lg:flex-1">
           <img
             className="w-full rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-400 max-w-2xl mx-auto"
-            src="https://maraviyainfotech.com/projects/grabit-tailwind/grabit-tailwind/assets/img/product-images/34_1.jpg"
+            src={product.image}
             alt="Potato Chips"
           />
         </div>
-        
+
         {/* Details Section */}
         <div className="w-full lg:flex-1 p-4 md:p-5">
-          <p className="font-semibold text-gray-600">Eggs</p>
+          <p className="font-semibold text-gray-600">{product.categoryName}</p>
           <h2 className="text-2xl md:text-4xl font-bold py-1 text-gray-900">
-            Potato Chips 52g, American Cream.
+            {product.name}
           </h2>
-          
+
           <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-15 font-semibold py-2">
-            <span className="text-gray-600">Sole: N/A</span>
-            <p className="text-gray-600">Total Rating : 992</p>
+            <span className="text-gray-600">Sole: {product.sole}</span>
+            <p className="text-gray-600">Total Rating : {product.ratings}</p>
           </div>
-          
+
           <div className="flex items-center gap-6 md:gap-10 py-2 font-semibold">
-            <p className="text-xl md:text-2xl text-green-600">Price: $664</p>
-            <p className="line-through text-lg md:text-xl text-gray-600">$2999</p>
+            <p className="text-xl md:text-2xl text-green-600">
+              Price: ${product.price}
+            </p>
+            <p className="line-through text-lg md:text-xl text-gray-600">
+              ${product.mrp}
+            </p>
           </div>
-          
+
           <p className="text-sm md:text-base font-medium text-gray-700 leading-relaxed">
-            Crunchy chips and snacks with American cream & onion flavour. Lorem
-            Ipsum is simply dummy text of the printing and typesetting industry.
+            {product.description}
           </p>
-          
+
           <div className="space-y-2 pt-3">
             <p>
-              <strong>SKU :</strong> WH12
+              <strong>SKU :</strong> {product.sku}
             </p>
             <p>
-              <strong>Stock :</strong> <span className="text-green-600">In Stock</span>
-            </p>
-            <p>
-              <strong>Closure :</strong> Hook & Loop
+              <strong>Stock :</strong>
+              <span className="text-green-600">{product.stock}</span>
             </p>
           </div>
-          
+
           {/* Size Options */}
           <div className="py-4 flex flex-col sm:flex-row sm:items-center gap-3">
-            <p className="font-bold text-lg">Size :</p>
-            <div className="flex gap-2 flex-wrap">
-              <button className="px-4 py-2 border border-gray-300 rounded-lg hover:border-blue-500 hover:text-blue-600 transition-colors">
-                299g
-              </button>
-              <button className="px-4 py-2 border border-gray-300 rounded-lg hover:border-blue-500 hover:text-blue-600 transition-colors">
-                500g
-              </button>
-              <button className="px-4 py-2 border border-gray-300 rounded-lg hover:border-blue-500 hover:text-blue-600 transition-colors">
-                1kg
-              </button>
-            </div>
+            <p className="font-bold text-lg">Size : {product.width}</p>
+ 
           </div>
-          
+
           {/* Quantity and Add to Cart */}
           <div className="flex flex-col sm:flex-row items-center gap-6 pt-6">
             <div className="flex items-center gap-4">
