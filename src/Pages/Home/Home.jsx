@@ -1,10 +1,10 @@
 import React from "react";
 import Hero from "./HomeComponents/Hero";
 import Product from "../Products/Product";
-import Banner from "../SectionBanner/banner";
 import DealProduct from "../Products/DealProduct/DealProduct";
 import CardBanner from "../SectionBanner/CardBanner/CardBanner";
 import FeaturesSection from "../SectionBanner/FeaturesSection/FeaturesSection";
+import Banner from "../SectionBanner/Banner";
 
 function Home() {
   return (
