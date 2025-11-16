@@ -3,7 +3,7 @@ import React from "react";
 function Banner() {
   return (
     <div className="py-10">
-      <div className="banner flex justify-end items-center px-[100px] py-[120px]  text-right">
+      <div className="banner flex justify-end items-center px-[100px] py-[260px]  text-right">
         <div>
           <span className="text-white text-xl">
             Starting at $<strong>20.00</strong>

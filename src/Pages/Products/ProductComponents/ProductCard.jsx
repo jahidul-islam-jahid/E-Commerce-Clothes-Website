@@ -8,7 +8,7 @@ function ProductCard({ product }) {
 
 
   return (
-    <div className="max-w-sm bg-white rounded-2xl h-auto shadow-lg p-4 md:p-6 hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-100 flex flex-col">
+    <div className="max-w-sm bg-white rounded-2xl h-auto shadow-sm p-4 md:p-6 hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-100 flex flex-col">
       {/* Product Image Container - Fixed height with proper fitting */}
       <div className="relative mb-4 flex-shrink-0">
         <div className="w-full h-40 md:h-48 bg-gray-50 rounded-xl overflow-hidden flex items-center justify-center">
